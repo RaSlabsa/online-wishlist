@@ -6,6 +6,7 @@
         public string UserName { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
-        public ICollection<User> Friends { get; set; } = new List<User>();
+        public ICollection<Friendship> SendFriendRequest { get; set; } = new List<Friendship>();
+        public ICollection<Friendship> ReceivedFriendRequest { get; set; } = new List<Friendship>();
     }
 }
