@@ -1,8 +1,9 @@
 ﻿namespace WishList.Domain.Entities
 {
-    internal class WishList
+    public class UserWishList
     {
-        public int WishListId { get; set; }
+        public int UserWishListId { get; set; }
+        public string WishListName { get; set; } = string.Empty;
         public int UserId { get; set; }
         public ICollection<Item> Items { get; set; } = new List<Item>();
     }

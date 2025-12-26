@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="WishListAPI.csproj" />
+  <Project Path="../WishList.Application/WishList.Application.csproj" />
+  <Project Path="../WishList.Domain/WishList.Domain.csproj" />
+  <Project Path="../WishList.Infrastructure/WishList.Infrastructure.csproj" />
+  <Project Path="WishList.WebAPI.csproj" />
 </Solution>

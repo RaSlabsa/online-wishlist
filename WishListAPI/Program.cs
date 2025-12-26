@@ -1,3 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
+using WishList.Infrastructure;
 
 namespace WishListAPI
 {
@@ -13,6 +15,9 @@ namespace WishListAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext(connectionString!);
 
             var app = builder.Build();
 
