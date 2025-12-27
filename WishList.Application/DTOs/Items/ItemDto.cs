@@ -1,6 +1,6 @@
-﻿namespace WishList.Domain.Entities
+﻿namespace WishList.Application.DTOs.Items
 {
-    public class Item
+    public class ItemDto
     {
         public int ItemId { get; set; }
         public string ItemName { get; set; } = string.Empty;
