@@ -10,8 +10,5 @@ namespace WishList.Application.DTOs.Items
 
         [Url]
         public string ItemURL { get; set; } = string.Empty;
-
-        [Required]
-        public int WishListId { get; set; }
     }
 }

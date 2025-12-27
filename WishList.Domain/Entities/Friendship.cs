@@ -11,9 +11,9 @@
     {
         public int FriendshipId { get; set; }
         public int ReceiverId { get; set; }
-        public required User Receiver { get; set; }
+        public User Receiver { get; set; } = null!;
         public int RequesterId { get; set; }
-        public required User Requester { get; set; }
+        public User Requester { get; set; } = null!;
         public FriendshipStatus Status { get; set; }
     }
 }
