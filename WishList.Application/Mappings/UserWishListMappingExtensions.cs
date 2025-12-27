@@ -21,11 +21,12 @@ namespace WishList.Application.Mappings
                     .ToList()
             };
         }
-        public static UserWishList ToEntity(this UserWishListCreateDto dto)
+        public static UserWishList ToEntity(this UserWishListCreateDto dto, int userId)
         {
             return new UserWishList
             {
-                WishListName = dto.WishListName
+                WishListName = dto.WishListName,
+                UserId = userId
             };
         }
     }

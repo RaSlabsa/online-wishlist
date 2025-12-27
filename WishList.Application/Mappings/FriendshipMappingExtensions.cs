@@ -17,11 +17,12 @@ namespace WishList.Application.Mappings
                 Status = entity.Status
             };
         }
-        public static Friendship ToEntity(this FriendshipCreateDto dto)
+        public static Friendship ToEntity(this FriendshipCreateDto dto, int requesterId)
         {
             return new Friendship
             {
-                ReceiverId = dto.ReceiverId
+                ReceiverId = dto.ReceiverId,
+                RequesterId = requesterId
             };
         }
     }

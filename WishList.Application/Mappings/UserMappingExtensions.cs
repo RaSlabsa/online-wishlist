@@ -18,8 +18,13 @@ namespace WishList.Application.Mappings
                 ReceivedFriendRequest = entity.ReceivedFriendRequest
                     .Select(f => f.ToDto())
                     .OfType<FriendshipDto>()
+                    .ToList(),
+
+                SendFriendRequest = entity.SendFriendRequest
+                    .Select(f => f.ToDto())
+                    .OfType<FriendshipDto>()
                     .ToList()
-                    
+
             };
         }
         public static User ToEntity(this UserCreateDto dto)
