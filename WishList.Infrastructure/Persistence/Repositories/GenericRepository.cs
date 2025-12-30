@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WishList.Application.Interfaces.Repositories;
+using WishList.Application.Common.Interfaces.Repositories;
 
 namespace WishList.Infrastructure.Persistence.Repositories
 {

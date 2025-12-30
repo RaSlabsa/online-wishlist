@@ -1,4 +1,4 @@
-﻿namespace WishList.Application.Interfaces.Repositories
+﻿namespace WishList.Application.Common.Interfaces.Repositories
 {
     public interface IGenericRepository<T> where T : class
     {

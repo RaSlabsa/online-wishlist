@@ -12,9 +12,9 @@ namespace WishList.Application.Mappings
 
             return new UserDto
             {
-                UserId = entity.UserId,
-                UserName = entity.UserName,
-                Email = entity.Email,
+                UserId = entity.Id,
+                UserName = entity.UserName!,
+                Email = entity.Email!,
                 ReceivedFriendRequest = entity.ReceivedFriendRequest
                     .Select(f => f.ToDto())
                     .OfType<FriendshipDto>()
@@ -31,8 +31,7 @@ namespace WishList.Application.Mappings
         {
             return new User
             {
-                UserName = dto.UserName,
-                Password = string.Empty,
+                UserName = dto.Email,
                 Email = dto.Email
             };
         }
