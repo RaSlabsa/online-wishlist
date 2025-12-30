@@ -20,7 +20,8 @@ namespace WishListAPI
             builder.Services.AddSwaggerGen();
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-            builder.Services.AddDbContext(connectionString!);
+            var configuration = builder.Configuration;
+            builder.Services.AddDbContext(connectionString!, configuration!);
             builder.Services.AddMediatR(cfg =>
                 cfg.RegisterServicesFromAssembly(typeof(WishList.Application.Mappings.UserMappingExtensions).Assembly));
 
