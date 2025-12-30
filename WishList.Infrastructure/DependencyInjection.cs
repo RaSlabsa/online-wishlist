@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WishList.Application.Common.Interfaces;
 using WishList.Application.Common.Interfaces.Repositories;
 using WishList.Domain.Entities;
 using WishList.Infrastructure.Persistence;
+using WishList.Infrastructure.Persistence.Authentication;
 using WishList.Infrastructure.Persistence.Repositories;
 
 namespace WishList.Infrastructure
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddDbContext(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddDbContext(this IServiceCollection services, string connectionString, IConfiguration configuration)
         {
             services.AddDbContext<WishListDb>(options =>
                 options.UseNpgsql(connectionString));
@@ -26,6 +29,10 @@ namespace WishList.Infrastructure
             .AddDefaultTokenProviders();
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            services.Configure<JwtOptions>(configuration.GetSection("Jwt"));
+
+            services.AddScoped<IJwtProvider, JwtProvider>();
 
             return services;
         }
